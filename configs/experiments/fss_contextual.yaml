@@ -1,0 +1,13 @@
+experiment:
+  name: fss_contextual_qwen32b
+  input: data/processed/filter_v0.json
+representation:
+  type: contextual
+  layer: -1
+  pooling: mean
+  batch_size: 4
+fss:
+  sizes: [100, 200, 300, 400, 500]
+  size_type: token
+  mu_cutoff: 0.2
+  temperature_range: [0.3, 1.8]

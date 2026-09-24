@@ -1,0 +1,32 @@
+project:
+  data_dir: data
+  model_dir: models
+  output_dir: outputs
+  cache_dir: outputs/cache
+model:
+  name: qwen3-32b
+  path: models/Qwen/Qwen3-32B
+  api_name: /models/Qwen/Qwen3-32B
+  endpoint: http://10.128.3.38:8100/v1
+  api_key: EMPTY
+device:
+  device: cuda:0
+  dtype: float16
+generation:
+  max_tokens: 605
+  samples_per_temperature: 1000
+  max_workers: 50
+  thinking_enabled: false
+representation:
+  type: static
+  layer: -1
+  pooling: mean
+  batch_size: 4
+fss:
+  sizes: [100, 200, 300, 400, 500]
+  size_type: token
+  mu_cutoff: 0.1
+  temperature_range: [0.3, 1.8]
+  guess_Tc: 1.2
+  guess_nu: 1.0
+  guess_xi: 0.0

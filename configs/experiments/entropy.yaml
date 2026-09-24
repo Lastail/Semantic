@@ -1,0 +1,8 @@
+experiment:
+  name: entropy_qwen32b
+  input: data/processed/filter_v0.json
+entropy:
+  mode: both
+  max_workers: 50
+  max_texts: null
+  temperature_range: [0.3, 1.8]
