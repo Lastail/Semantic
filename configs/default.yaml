@@ -10,12 +10,12 @@ model:
   endpoint: http://10.128.3.38:8100/v1
   api_key: EMPTY
 device:
-  device: cuda:0
+  device: cuda:2
   dtype: float16
 generation:
-  max_tokens: 605
+  max_tokens: 4096
   samples_per_temperature: 1000
-  max_workers: 50
+  max_workers: 70
   thinking_enabled: false
 representation:
   type: static

@@ -1,0 +1,5 @@
+model:
+  name: qwen3-0.6b
+  path: models/Qwen/Qwen3-0.6B
+  api_name: /models/Qwen/Qwen3-0.6B
+  endpoint: http://10.128.3.38:8101/v1
