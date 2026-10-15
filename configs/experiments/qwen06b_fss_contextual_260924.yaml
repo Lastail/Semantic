@@ -1,0 +1,19 @@
+experiment:
+  name: qwen06b_fss_contextual
+  input: data/raw/qwen06b_wiki_en_260924.json
+representation:
+  type: contextual
+  layer: -1
+  pooling: mean
+  batch_size: 4
+fss:
+  sizes: [100, 500, 1000, 2000, 3000]
+  size_type: token
+  mu_cutoff: 0.2
+  temperature_range: [0.0, 3.0]
+  initial_guess:
+    Tc: 1.2
+    nu: 1.0
+    xi: 0.0
+output:
+  dir: outputs/qwen06b_fss_contextual_260924

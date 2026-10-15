@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
-class RepresentationExtractor(ABC):
+
+class BaseRepresentation(ABC):
+    """For fixed (T,L), return TWO-NN first/second neighbour distances."""
     @abstractmethod
-    def encode(self, texts, max_tokens): ...
+    def compute_neighbors(self, texts, length, cache_path=None):
+        raise NotImplementedError

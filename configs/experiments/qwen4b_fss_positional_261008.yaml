@@ -1,0 +1,22 @@
+experiment:
+  name: qwen4b_fss_positional
+  input: data/raw/qwen4b_wiki_en_261008.json
+representation:
+  type: positional
+  batch_size: 4
+  text_block_size: 8
+  position_block_size: 128
+  cache_dtype: float32
+  cleanup_states: true
+fss:
+  sizes: [100, 500, 1000, 2000, 3000]
+  size_type: token
+  mu_cutoff: 2
+  temperature_range: [0.0, 3.0]
+  common_ensemble: true
+  initial_guess:
+    Tc: 1.2
+    nu: 1.0
+    xi: 0.0
+output:
+  dir: outputs/qwen4b_fss_positional_261008

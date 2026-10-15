@@ -1,9 +1,24 @@
+"""Connected positional susceptibility, population ensemble convention."""
 import numpy as np
 
-def susceptibility_from_token_embeddings(samples):
-    """samples: iterable of arrays [tokens, dim], reproduces <m^2>-<m>^2 style statistic."""
-    samples=[np.asarray(x,float) for x in samples if len(x)]
-    if not samples:return 0.0
-    L=min(len(x) for x in samples); xs=[x[:L] for x in samples]
-    sus1=np.mean([np.sum(x@x.T)/L for x in xs]); avg=np.mean(xs,axis=0); sus2=np.sum(avg@avg.T)/L
-    return float(sus1-sus2)
+
+def susceptibility_from_token_embeddings(samples, length=None):
+    """Samples: iterable of [tokens, dim] arrays; all must have >= length tokens.
+
+    chi = (1/L) sum_ij [<e_i.e_j> - <e_i>.<e_j>].
+    Uses algebraically identical vector-sum identity, no LxL matrix.
+    """
+    xs = [np.asarray(x, dtype=np.float64) for x in samples]
+    if not xs:
+        raise ValueError('No samples')
+    if length is None:
+        length = min(x.shape[0] for x in xs)
+    if length <= 0 or any(x.ndim != 2 or len(x) < length for x in xs):
+        raise ValueError('Samples must be 2D and contain at least L tokens')
+    if len({x.shape[1] for x in xs}) != 1:
+        raise ValueError('Embedding dimensions differ')
+    sums = np.stack([x[:length].sum(axis=0) for x in xs])
+    if not np.isfinite(sums).all():
+        raise ValueError('Nonfinite embeddings')
+    center = sums.mean(axis=0)
+    return float(np.square(sums - center).sum() / (len(xs) * length))

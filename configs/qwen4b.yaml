@@ -1,0 +1,5 @@
+model:
+  name: qwen3-4b
+  path: /public/home/ruanhj/Critical/Qwen/Qwen3-4B
+  api_name: /models/Qwen/Qwen3-4B
+  endpoint: http://10.128.3.38:8103/v1

@@ -1,0 +1,13 @@
+experiment:
+  name: qwen4b_susceptibility
+  input: data/raw/qwen4b_wiki_en_261008.json
+physics:
+  observable: susceptibility
+  token_source: input_embedding
+  sizes: [200, 500, 1000, 3000, 4000]
+  common_ensemble: true
+  batch_size: 32
+device:
+  device: cuda:3
+output:
+  dir: outputs/qwen4b_susceptibility_261008

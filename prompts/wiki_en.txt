@@ -1,0 +1,29 @@
+Write a detailed self-contained educational article about the evolution,
+biology, ecology, and classification of barnacles.
+
+The article must contain the following sections:
+
+1. Introduction
+2. Evolutionary history
+3. Taxonomy and classification
+4. Anatomy and morphology
+5. Feeding mechanisms
+6. Reproduction and life cycle
+7. Larval development
+8. Settlement mechanisms
+9. Habitat and geographical distribution
+10. Ecological interactions
+11. Adaptation to intertidal environments
+12. Predators and defensive strategies
+13. Environmental factors affecting barnacles
+14. Scientific methods used to study barnacles
+15. Important unresolved research questions
+16. Conclusion
+
+Develop every section in substantial detail with explanations, examples,
+and connections to related biological concepts.
+
+Complete all sixteen sections in order.
+Do not skip or merge sections.
+Do not provide a shortened version or summary in place of the requested article.
+Do not end the response before all sections have been completed.

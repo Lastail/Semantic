@@ -1,0 +1,22 @@
+experiment:
+  name: qwen32b_fss_static_mean_260930
+  input: data/raw/qwen32b_wiki_en_260930.json
+representation:
+  type: static_mean
+  batch_size: 32
+  normalize: false
+fss:
+  sizes: [200, 500, 1000, 3000, 4000]
+  size_type: token
+  mu_cutoff: 2.0
+  temperature_range: [0.0, 1.8]
+  common_ensemble: true
+initial_guess:
+  Tc: 1.2
+  nu: 1.0
+  xi: 0.0
+output:
+  dir: outputs/qwen32b_fss_static_mean_260930
+device:
+  device: cuda:3
+  dtype: float16
